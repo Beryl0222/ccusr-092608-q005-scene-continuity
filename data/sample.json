@@ -1,0 +1,9 @@
+{
+  "event_id": "092601-005-sample-001",
+  "event_type": "BASELINE_FROZEN",
+  "aggregate_type": "scene_baseline",
+  "aggregate_id": "scene_continuity-001",
+  "occurred_at": "2026-09-25T10:00:00+08:00",
+  "version": 1,
+  "payload": {}
+}

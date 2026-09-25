@@ -1,0 +1,5 @@
+[project]
+name = "scene-continuity"
+version = "0.1.0"
+description = "AI短剧镜头连续性工单领域契约"
+requires-python = ">=3.11"

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI短剧镜头连续性工单领域事件",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "occurred_at",
+    "version",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "BASELINE_FROZEN",
+        "CANDIDATE_RECEIVED",
+        "ISSUE_RECORDED",
+        "SHOT_LOCKED",
+        "REWORK_PROPAGATED"
+      ]
+    },
+    "aggregate_type": {
+      "type": "string",
+      "enum": [
+        "scene_baseline",
+        "shot_candidate",
+        "continuity_issue",
+        "edit_release"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "payload_required_by_event": {
+    "CANDIDATE_RECEIVED": [
+      "batch_ref",
+      "content_hash"
+    ],
+    "ISSUE_RECORDED": [
+      "dimension",
+      "evidence"
+    ],
+    "SHOT_LOCKED": [
+      "edit_ref",
+      "candidate_ref"
+    ]
+  },
+  "additionalProperties": false
+}

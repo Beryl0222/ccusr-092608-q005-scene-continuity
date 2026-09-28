@@ -6,8 +6,8 @@
 
 - `contracts/domain.schema.json`：对象、事件和载荷字段约定。
 - `data/sample.json`：可直接校验的联调样例。
-- `src/scene_continuity/`：基础契约校验与命令行入口。
-- `tests/`：信封、时间、版本和事件载荷测试。
+- `src/scene_continuity/`：基础契约校验、事件溯源工单服务（`service.py`）、可控时钟（`clock.py`）、事件存储（`store.py`）、采用链解释（`provenance.py`）与命令行入口。
+- `tests/`：信封、时间、版本和事件载荷测试，以及隔离/幂等、角色权限、沿边返工、原子锁片、预算交期、时钟恢复和最终镜头解释的全链路场景测试。
 - `docs/domain.md`：领域对象与事件语义。
 
 ## 测试

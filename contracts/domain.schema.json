@@ -21,9 +21,19 @@
       "enum": [
         "BASELINE_FROZEN",
         "CANDIDATE_RECEIVED",
+        "OBSERVATION_RECORDED",
+        "CONTINUITY_EDGE_LINKED",
+        "CONSTRAINT_CONFIRMED",
         "ISSUE_RECORDED",
+        "CANDIDATE_WITHDRAWN",
+        "TICKET_REOPENED",
+        "REGEN_REQUESTED",
+        "REGEN_APPROVED",
+        "REGEN_REJECTED",
+        "EDIT_OPENED",
         "SHOT_LOCKED",
-        "REWORK_PROPAGATED"
+        "REWORK_PROPAGATED",
+        "RELEASE_DELIVERED"
       ]
     },
     "aggregate_type": {
@@ -56,13 +66,54 @@
       "batch_ref",
       "content_hash"
     ],
+    "OBSERVATION_RECORDED": [
+      "dimension",
+      "evidence"
+    ],
+    "CONTINUITY_EDGE_LINKED": [
+      "from_candidate_ref",
+      "to_candidate_ref"
+    ],
+    "CONSTRAINT_CONFIRMED": [
+      "constraint"
+    ],
     "ISSUE_RECORDED": [
       "dimension",
       "evidence"
     ],
+    "CANDIDATE_WITHDRAWN": [
+      "reason"
+    ],
+    "TICKET_REOPENED": [
+      "root_candidate_ref"
+    ],
+    "REGEN_REQUESTED": [
+      "estimated_cost"
+    ],
+    "REGEN_APPROVED": [
+      "ticket_ref"
+    ],
+    "REGEN_REJECTED": [
+      "ticket_ref",
+      "reason"
+    ],
+    "EDIT_OPENED": [
+      "edit_ref",
+      "plan_ref",
+      "deadline"
+    ],
     "SHOT_LOCKED": [
       "edit_ref",
       "candidate_ref"
+    ],
+    "REWORK_PROPAGATED": [
+      "root_candidate_ref",
+      "reopened_ticket_refs"
+    ],
+    "RELEASE_DELIVERED": [
+      "release_ref",
+      "selections",
+      "revision_note"
     ]
   },
   "additionalProperties": false
